@@ -69,7 +69,7 @@ void DisplayTotal( const int iTotalSmall, const int iTotalMedium, const int iTot
 		//cost of a small surfboard 
 		XXXS = iTotalXXXS * 100;
 
-		cout << "The total number of XXS surfboards is: " << iTotalXXXS << "at a total cost of $" << XXXS << endl;
+		cout << "The total number of XXXS surfboards is: " << iTotalXXXS << "at a total cost of $" << XXXS << endl;
 	//}
 
 	if (iTotalSmall != 0)
