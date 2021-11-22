@@ -1,5 +1,4 @@
-// week 5 - programing assignment Andreh Naisan.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//@Auhtor : Andreh Naisan
+// week 5 - programing assignment.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //some comments are for github
 
 #include<iostream>
@@ -13,7 +12,7 @@ void ShowUsage()
 	
 	cout << "please make a choice " << endl;
 
-	//cout << "The price of XXXS surfboard is $100" << endl;
+	cout << "The price of XXXS surfboard is $100" << endl;
 
 	cout << "The price of small surfboard is $175" << endl;
 	
@@ -23,19 +22,19 @@ void ShowUsage()
 	
 	
 }
-void DisplayPurchase(const int iTotalSmall, const int iTotalMedium, const int iTotallLarge ) //,const int iTotalXXXS
+void DisplayPurchase(const int iTotalSmall, const int iTotalMedium, const int iTotallLarge ,const int iTotalXXXS)
 {
-	if (iTotalSmall == 0 && iTotalMedium == 0 && iTotallLarge == 0) // && iTotalXXXS ==0
+	if (iTotalSmall == 0 && iTotalMedium == 0 && iTotallLarge == 0 && iTotalXXXS ==0)
 	{
 		//if no purchase is made
 		cout << "No purchases made yet." << endl;
 
 		return;
 	}
-	//if (iTotalXXXS != 0)
-	//{
+	if (iTotalXXXS != 0)
+	{
 		//number of XXXS surfboard purchase made 
-		//cout << "The total number of XXXS surfboards is: " << iTotalXXXS << endl;
+		cout << "The total number of XXXS surfboards is: " << iTotalXXXS << endl;
 
 	if (iTotalSmall != 0)
 	{
@@ -53,9 +52,9 @@ void DisplayPurchase(const int iTotalSmall, const int iTotalMedium, const int iT
 		cout << "The total number of large surfboards is: " << iTotallLarge << endl;
 	}
 }
-void DisplayTotal( const int iTotalSmall, const int iTotalMedium, const int iTotallLarge) //,const int iTotalXXXS
+void DisplayTotal( const int iTotalSmall, const int iTotalMedium, const int iTotallLarge ,const int iTotalXXXS)
 {
-	if (iTotalSmall == 0 && iTotalMedium == 0 && iTotallLarge == 0) // &&iTotalXXXS == 0
+	if (iTotalSmall == 0 && iTotalMedium == 0 && iTotallLarge == 0 &&iTotalXXXS == 0)
 	{
 	//if no purchase is made 
 		cout << "No purchases made yet." << endl;
@@ -63,14 +62,14 @@ void DisplayTotal( const int iTotalSmall, const int iTotalMedium, const int iTot
 		return;
 	}
 	//surf size variables
-	int small = 0, medium = 0 , large = 0; // XXXS = 0
+	int small = 0, medium = 0 , large = 0 , XXXS = 0;
 
-	//if (iTotalSmall != 0)
-	//{
+	if (iTotalXXXS != 0)
+	{
 		//cost of a small surfboard 
-		//small = iTotalXXXS * 100;
+		XXXS = iTotalXXXS * 100;
 
-		//cout << "The total number of XXS surfboards is: " << iTotalXXS << "at a total cost of $" << XXS << endl;
+		cout << "The total number of XXS surfboards is: " << iTotalXXXS << "at a total cost of $" << XXXS << endl;
 	//}
 
 	if (iTotalSmall != 0)
@@ -95,13 +94,13 @@ void DisplayTotal( const int iTotalSmall, const int iTotalMedium, const int iTot
 		cout << "The total number of large surfboards is: " << iTotallLarge << "at a total cost of $" << large << endl;
 	}
 
-	int totalprice = small + medium + large;// +XXXS
+	int totalprice = small + medium + large +XXXS;
 	cout << "Amount due is: $" << totalprice << endl;
 }
 void MakePurchase(int& iTotalSmall, int& iTotalMedium, int& iTotallLarge)
 {
 	//user choice of quantity and size surfboard 
-	cout << "Please enter the quantity and type(S-Small, M-Medium, L-Large)of surfboard you would like to purchase: "; //XXXS - squirrel
+	cout << "Please enter the quantity and type(XXXS-Squirrel , S-Small, M-Medium, L-Large)of surfboard you would like to purchase: "; //XXXS - squirrel
 
 	//user choice of quantity and size surfboard 
 	char SurfSize;
@@ -114,7 +113,7 @@ void MakePurchase(int& iTotalSmall, int& iTotalMedium, int& iTotallLarge)
 
 	else if (SurfSize == 'M' || SurfSize == 'm') iTotalMedium += quantity;
 
-	//else if (SurfSize == 'XXXS' || SurfSize == 'xxxs') iTotalXXXS += quantity;
+	else if (SurfSize == 'XXXS' || SurfSize == 'xxxs') iTotalXXXS += quantity;
 
 	else iTotalSmall += quantity;
 }
@@ -139,7 +138,7 @@ int main()
 
 	cout<< "To quit the program press 'Q'" << endl;
 
-	int iTotalSmall = 0, iTotalMedium = 0, iTotallLarge = 0;  //iTotalXXXS = 0
+	int iTotalSmall = 0, iTotalMedium = 0, iTotallLarge = 0,  iTotalXXXS = 0;
 	while (1) 
 	{
 		//user choice
@@ -164,21 +163,21 @@ int main()
 		case 'P':case 'p':
 		{
 		 
-			MakePurchase(iTotalSmall, iTotalMedium, iTotallLarge); ////iTotalXXXS
+			MakePurchase(iTotalSmall, iTotalMedium, iTotallLarge ,iTotalXXXS);
 			break;
 		}
 		//to show the user purchase
 		case 'C':case 'c':
 		{
 		
-			DisplayPurchase(iTotalSmall, iTotalMedium, iTotallLarge);//iTotalXXXS
+			DisplayPurchase(iTotalSmall, iTotalMedium, iTotallLarge ,iTotalXXXS);
 			break;
 		}
 		// to display the total
 		case 'T':case 't':
 		{
 
-			DisplayTotal(iTotalSmall, iTotalMedium, iTotallLarge);//iTotalXXXS
+			DisplayTotal(iTotalSmall, iTotalMedium, iTotallLarge ,iTotalXXXS);
 			break;
 		}
 		// to end the program when Q is pressed 
@@ -192,3 +191,4 @@ int main()
 		
 	}
 }
+	/// the squirrel(aka scrat) surfboard is actually an overpriced acorn. 
