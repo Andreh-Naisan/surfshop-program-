@@ -35,7 +35,7 @@ void DisplayPurchase(const int iTotalSmall, const int iTotalMedium, const int iT
 	{
 		//number of XXXS surfboard purchase made 
 		cout << "The total number of XXXS surfboards is: " << iTotalXXXS << endl;
-
+	}
 	if (iTotalSmall != 0)
 	{
 		//number of small surfboard purchase made 
@@ -70,7 +70,7 @@ void DisplayTotal( const int iTotalSmall, const int iTotalMedium, const int iTot
 		XXXS = iTotalXXXS * 100;
 
 		cout << "The total number of XXXS surfboards is: " << iTotalXXXS << "at a total cost of $" << XXXS << endl;
-	//}
+	}
 
 	if (iTotalSmall != 0)
 	{
@@ -191,4 +191,4 @@ int main()
 		
 	}
 }
-	/// the squirrel(aka scrat) surfboard is actually an overpriced acorn. 
+	/// the squirrel (aka scrat) surfboard is actually an overpriced acorn. 
